@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAHAB | Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@400;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins', sans-serif;background:#0b0b0b;color:#fff;overflow:hidden;scroll-behavior:smooth;height:100vh;}
+html{height:100%;}
+
+/* Gold text/glow */
+.gold-text{color:#ffd700;text-shadow:0 0 20px #ffd700,0 0 40px #ffd700;}
+
+/* Splash */
+.splash{width:100%;height:100vh;display:flex;justify-content:center;align-items:center;background-color:#0b0b0b;flex-direction:column;position:relative;}
+.splash h1{font-family:'Cinzel', serif;font-size:8rem;color:#ffd700;text-shadow:0 0 30px #ffd700,0 0 60px #ffd700;text-align:center;animation: float 3s ease-in-out infinite;}
+@keyframes float {0%,100%{transform: translateY(0);}50%{transform: translateY(-10px);}}
+
+/* Arrow animation */
+.arrow-down{
+  position:absolute;
+  bottom:50px;
+  font-size:3rem;
+  color:#ffd700;
+  animation: bounce 2s infinite;
+  cursor:pointer;
+}
+@keyframes bounce{
+  0%,100%{transform: translateY(0);}
+  50%{transform: translateY(15px);}
+}
+
+/* Hero Video Section */
+.hero{width:100%;min-height:90vh;display:flex;justify-content:center;align-items:center;background-color:#000;position:relative;overflow:hidden;}
+.hero-video{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:auto;height:100%;max-width:100%;object-fit:contain;z-index:0;}
+
+/* Sections */
+section{padding:80px 20px;max-width:1200px;margin:0 auto;}
+h2{font-family:'Cinzel', serif;font-size:2.5rem;text-align:center;color:#ffd700;margin-bottom:40px;}
+
+/* About */
+.about{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:60px;}
+.profile-container{position: relative; display: inline-block; margin-bottom:20px;}
+.profile-container img{width:200px;height:200px;border-radius:50%;object-fit:cover;display:block;}
+.name-overlay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cinzel', serif;font-size:2.5rem;color:#ffd700;text-shadow:0 0 25px #ffd700;}
+
+/* Projects */
+.project-grid{display:flex;flex-direction:column;gap:40px;margin-bottom:60px;}
+.project-grid video{width:100%;max-height:500px;border-radius:15px;object-fit:contain;box-shadow:0 0 40px #ffd700;transition:0.5s;}
+.project-grid video:hover{transform: scale(1.05) rotateZ(1deg);box-shadow:0 0 70px #ffd700,0 0 30px #ffd700;}
+
+/* Skills */
+.skills{display:flex;justify-content:center;flex-direction:column;align-items:center;margin-bottom:60px;}
+.skills-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:20px;}
+.skills-grid div{padding:25px 30px;border-radius:15px;background:#ffd700;color:#0b0b0b;font-weight:700;box-shadow:0 0 40px #ffd700;transition:0.5s;}
+.skills-grid div:hover{transform: scale(1.15);box-shadow:0 0 80px #ffd700;}
+
+/* Contact */
+.contact{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:60px;}
+.contact a{display:inline-block;margin:10px;padding:14px 35px;border-radius:12px;background:#ffd700;color:#0b0b0b;font-weight:600;text-decoration:none;box-shadow:0 0 35px #ffd700;transition:0.3s;}
+.contact a:hover{transform:scale(1.05);box-shadow:0 0 70px #ffd700;}
+
+/* Footer */
+footer{text-align:center;padding:40px 20px;color:#aaa;}
+footer a{color:#ffd700; text-decoration:none; font-weight:bold;}
+footer a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<!-- Splash -->
+<section class="splash">
+  <h1>DAHAB</h1>
+  <div class="arrow-down" id="scrollArrow">&#8595;</div>
+</section>
+
+<!-- Hero Video -->
+<section class="hero" id="heroSection">
+  <video id="heroVideo" class="hero-video" loop playsinline muted>
+    <source src="hero.mp4.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- About -->
+<section class="about">
+  <h2>About Me</h2>
+  <div class="profile-container">
+    <img src="profile.jpg" alt="DAHAB">
+    <h1 class="name-overlay">DAHAB</h1>
+  </div>
+  <p>
+    🎬 Hi! I'm <strong>DAHAB</strong>, a passionate <strong>Video Editor & Motion Designer</strong> turning raw footage into cinematic gold! ✨  
+    🚀 Specializing in <strong>Reels</strong>, <strong>Ads</strong>, and <strong>Cinematic Visuals</strong> that grab attention & leave an impact! 💥  
+    🎨 Skilled in <strong>Premiere Pro</strong>, <strong>After Effects</strong>, <strong>Color Grading</strong>, <strong>Motion Graphics</strong> & <strong>Sound Design</strong> 🎵  
+    🌟 Let's create something epic together! 💫
+  </p>
+</section>
+
+<!-- Projects -->
+<section class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <video src="SnapInsta.to_AQM3CpRhSxkUbG7jyhAPIr14NfTmQQqQRfspLTh6VXzVAV5oc23ke8SrLKuQ2G2hb18U8sUiWysJGzmFLkAk5m0HdkWmUhhJlEaP-NQ.mp4" controls></video>
+    <video src="SnapInsta.to_AQP8xesPdFz3a6A_haqHDZAbJ0ex6ICIfcMxO6QoPj4Nves0Cy_oaCLNg7F2Vz18ofp1kiDvY032ipkhK7Hc51RUIylpZN7JyAIZ7L4.mp4" controls></video>
+    <video src="SnapInsta.to_AQPbtu_wKyNPGLBbM8AtmugR4qZN2mVJULtyi9cnlzItAEuJXAf5ot3OIwxm6R7eWNRpmSKhAd43WS_qD5uSVTSMEIUdpi5rj6nMlDY.mp4" controls></video>
+    <video src="SnapInsta.to_AQPzgrd_1UHww-YbDNXRkoD-2UMR8YLR1ShFRD8imrwsjIYCvNReZR51euONyHaqVJZCy0G1CjcEE27yTicyEB4CAs4GRiiP4PgQ1g8.mp4" controls></video>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div>Premiere Pro</div>
+    <div>After Effects</div>
+    <div>Color Grading</div>
+    <div>Motion Graphics</div>
+    <div>Sound Design</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <h2>Contact</h2>
+  <a href="https://www.instagram.com/dahab.x/" target="_blank">Instagram</a>
+</section>
+
+<footer>
+  © 2025 DAHAB - All Rights Reserved <br>
+  POWERD BY <a href="https://www.instagram.com/youssef_badawy632/" target="_blank">YOUSSEF</a>
+</footer>
+
+<script>
+const heroVideo = document.getElementById('heroVideo');
+const scrollArrow = document.getElementById('scrollArrow');
+const heroSection = document.getElementById('heroSection');
+const projectVideos = document.querySelectorAll('.project-grid video');
+
+// initially disable scrolling
+document.body.style.overflow = 'hidden';
+
+// السهم ينزل للـ Hero Video ويفتح التمرير
+scrollArrow.addEventListener('click', () => {
+  document.body.style.overflow = 'auto'; // enable scroll
+  heroSection.scrollIntoView({behavior:'smooth'});
+  heroVideo.muted = false;
+  heroVideo.play().catch(()=>{ console.log("Autoplay blocked"); });
+  projectVideos.forEach(v=>v.pause());
+});
+
+// أي فيديو Project يشغل فيديوهاته فقط والباقي يتوقف
+projectVideos.forEach(v=>{
+  v.addEventListener('play', ()=>{
+    projectVideos.forEach(other=>{ if(other!==v) other.pause(); });
+    heroVideo.pause();
+  });
+  v.addEventListener('pause', ()=>{
+    let anyPlaying = Array.from(projectVideos).some(p=>!p.paused);
+    if(!anyPlaying) heroVideo.play();
+  });
+});
+</script>
+
+</body>
+</html>
