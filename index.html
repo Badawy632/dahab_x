@@ -18,7 +18,7 @@ body{
 }
 html{height:100%;}
 
-/* ========== SPLASH ========== */
+/* SPLASH */
 .splash{
   width:100%;
   height:100vh;
@@ -31,10 +31,11 @@ html{height:100%;}
 }
 .splash h1{
   font-family:'Cinzel', serif;
-  font-size:8rem;
+  font-size:8vw;
   color:#ffd700;
   text-shadow:0 0 30px #ffd700,0 0 60px #ffd700;
   animation: float 3s ease-in-out infinite;
+  text-align:center;
 }
 @keyframes float{
   0%,100%{transform:translateY(0);}
@@ -44,62 +45,62 @@ html{height:100%;}
 /* Arrow */
 .arrow-down{
   position:absolute;
-  bottom:50px;
-  font-size:3rem;
+  bottom:5vw;
+  font-size:6vw;
   color:#ffd700;
   cursor:pointer;
   animation:bounce 2s infinite;
 }
 @keyframes bounce{
   0%,100%{transform:translateY(0);}
-  50%{transform:translateY(18px);}
+  50%{transform:translateY(4vw);}
 }
 
-/* ========== HERO VIDEO ========== */
+/* HERO VIDEO */
 .hero{
   width:100%;
-  height:100vh;
+  min-height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background:#000;
-  position:relative;
   overflow:hidden;
 }
 .hero-video{
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
+  width:100%;
+  height:100%;
+  object-fit:cover;
   cursor:pointer;
-  background-color:#ffd700;
 }
 
-/* ========== SECTIONS ========== */
-section{padding:80px 20px;max-width:1200px;margin:auto;}
+/* SECTIONS */
+section{padding:8vw 5vw;max-width:1200px;margin:auto;}
 h2{
   font-family:'Cinzel', serif;
-  font-size:2.5rem;
+  font-size:6vw;
   color:#ffd700;
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:5vw;
 }
 
-/* ========== ABOUT ========== */
+/* ABOUT */
 .about{
   display:flex;
   flex-direction:column;
   align-items:center;
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:8vw;
 }
 .profile-container{
   position:relative;
   display:inline-block;
-  margin-bottom:20px;
+  margin-bottom:2vw;
 }
 .profile-container img{
-  width:200px;
-  height:200px;
+  width:30vw;
+  max-width:200px;
+  height:30vw;
+  max-height:200px;
   border-radius:50%;
   object-fit:cover;
 }
@@ -109,20 +110,20 @@ h2{
   left:50%;
   transform:translate(-50%,-50%);
   font-family:'Cinzel', serif;
-  font-size:2.5rem;
+  font-size:6vw;
   color:#ffd700;
   text-shadow:0 0 25px #ffd700;
 }
 
-/* ========== PROJECTS ========== */
+/* PROJECTS */
 .project-grid{
   display:flex;
   flex-direction:column;
-  gap:40px;
+  gap:4vw;
 }
 .project-grid video{
   width:100%;
-  max-height:500px;
+  max-height:50vh;
   object-fit:contain;
   border-radius:15px;
   box-shadow:0 0 40px #ffd700;
@@ -131,26 +132,24 @@ h2{
 }
 .project-grid video:hover{
   transform: scale(1.06) rotateZ(1deg);
-  box-shadow:
-    0 0 60px #ffd700,
-    0 0 120px rgba(255,215,0,0.6);
+  box-shadow:0 0 60px #ffd700, 0 0 120px rgba(255,215,0,0.6);
 }
 
-/* ========== SKILLS ========== */
+/* SKILLS */
 .skills{
   display:flex;
   flex-direction:column;
   align-items:center;
-  margin-bottom:60px;
+  margin-bottom:8vw;
 }
 .skills-grid{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:30px;
+  gap:4vw;
 }
 .skills-grid div{
-  padding:25px 30px;
+  padding:5vw 6vw;
   border-radius:15px;
   background:#ffd700;
   color:#0b0b0b;
@@ -161,14 +160,13 @@ h2{
 .skills-grid div:hover{
   transform:scale(1.15);
   box-shadow:0 0 80px #ffd700;
-  cursor:pointer;
 }
 
-/* ========== CONTACT ========== */
+/* CONTACT */
 .contact{text-align:center;}
 .contact a{
   display:inline-block;
-  padding:14px 35px;
+  padding:4vw 8vw;
   background:#ffd700;
   color:#000;
   border-radius:12px;
@@ -177,10 +175,10 @@ h2{
   box-shadow:0 0 40px #ffd700;
 }
 
-/* ========== FOOTER ========== */
+/* FOOTER */
 footer{
   text-align:center;
-  padding:40px;
+  padding:5vw;
   color:#aaa;
 }
 footer a{
@@ -256,54 +254,49 @@ footer a:hover{text-decoration:underline;}
   POWERD BY <a href="https://www.instagram.com/youssef_badawy632/" target="_blank">YOUSSEF</a>
 </footer>
 
+<!-- Hover Sound -->
+<audio id="hoverSound" src="mixkit-camera-shutter-click-1133.wav"></audio>
+
 <script>
 const heroVideo = document.getElementById('heroVideo');
 const scrollArrow = document.getElementById('scrollArrow');
 const heroSection = document.getElementById('heroSection');
 const projectVideos = document.querySelectorAll('.project-grid video');
-const skillDivs = document.querySelectorAll('.skills-grid div');
+const skills = document.querySelectorAll('.skills-grid div');
+const hoverSound = document.getElementById('hoverSound');
 
-// Audio
-const hoverSound = new Audio("mixkit-camera-shutter-click-1133.wav");
-hoverSound.volume = 0.5; // يمكن تعديل الصوت
-
-// Disable initial scroll
 document.body.style.overflow = 'hidden';
 
-// Arrow scroll
+// Scroll to Hero section
 scrollArrow.onclick = () => {
   document.body.style.overflow = 'auto';
   heroSection.scrollIntoView({behavior:'smooth'});
   heroVideo.play();
 };
 
-// Hero video click toggle
-heroVideo.addEventListener('click',()=>{
-  heroVideo.paused ? heroVideo.play() : heroVideo.pause();
+// Toggle hero video on click
+heroVideo.addEventListener('click',()=>{ heroVideo.paused ? heroVideo.play() : heroVideo.pause(); });
+
+// Pause hero video when scrolled out of view
+window.addEventListener('scroll',()=>{
+  const rect = heroSection.getBoundingClientRect();
+  if(rect.bottom < 0 || rect.top > window.innerHeight){
+    heroVideo.pause();
+  }
 });
 
-// Project videos play only individually
+// Project videos play/pause
 projectVideos.forEach(v=>{
   v.addEventListener('play',()=>{
     heroVideo.pause();
     projectVideos.forEach(o=>{ if(o!==v) o.pause(); });
   });
-  v.addEventListener('mouseenter',()=>{ hoverSound.play(); });
+  v.addEventListener('mouseenter',()=>{ hoverSound.currentTime=0; hoverSound.play(); });
 });
 
 // Skills hover sound
-skillDivs.forEach(d=>{
-  d.addEventListener('mouseenter',()=>{ hoverSound.play(); });
-});
-
-// Pause hero video when scrolling away
-window.addEventListener('scroll',()=>{
-  const rect = heroSection.getBoundingClientRect();
-  if(rect.bottom < 0 || rect.top > window.innerHeight){
-    heroVideo.pause();
-  } else if(rect.top >=0 && rect.bottom <= window.innerHeight){
-    heroVideo.play();
-  }
+skills.forEach(s=>{
+  s.addEventListener('mouseenter',()=>{ hoverSound.currentTime=0; hoverSound.play(); });
 });
 </script>
 
